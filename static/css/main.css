@@ -1,0 +1,6 @@
+.question {
+    border: 1px solid lightgray;
+}
+.form-check-label:hover {
+    cursor: pointer;
+}

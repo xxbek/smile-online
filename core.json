@@ -1,0 +1,1312 @@
+[
+{
+ "model": "core.question",
+ "pk": 1,
+ "fields": {
+  "title": "Вы боитесь лечиться у стоматолога? По шкале от 1 (несильно) до 10 ( очень сильно ) на сколько боитесь",
+  "added_at": "2021-07-24T04:48:29.389Z",
+  "quest": 1,
+  "order": 1,
+  "answer_options": "1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n10",
+  "keywords": [
+   3
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 2,
+ "fields": {
+  "title": "Был ли у Вас когда-либо неприятный опыт лечения у стоматолога?",
+  "added_at": "2021-07-24T04:48:29.401Z",
+  "quest": 1,
+  "order": 2,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   2
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 3,
+ "fields": {
+  "title": "Были ли у Вас когда-либо осложнения после лечения у стоматолога?",
+  "added_at": "2021-07-24T04:48:29.404Z",
+  "quest": 1,
+  "order": 3,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   2
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 4,
+ "fields": {
+  "title": "Были ли у Вас трудности с обезболиванием или осложнения после использования анестетиков?",
+  "added_at": "2021-07-24T04:48:29.408Z",
+  "quest": 1,
+  "order": 4,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   2
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 5,
+ "fields": {
+  "title": "Носили ли Вы когда-нибудь брекеты, проходили ортодонтическое лечение, исправление или пришлифовывание прикуса?",
+  "added_at": "2021-07-24T04:48:29.412Z",
+  "quest": 1,
+  "order": 5,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   6
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 6,
+ "fields": {
+  "title": "Были ли какие-то из зубов удалены или каких зубов никогда не было?",
+  "added_at": "2021-07-24T04:48:29.414Z",
+  "quest": 1,
+  "order": 6,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 7,
+ "fields": {
+  "title": "Когда Вы чистите зубы нитью или зубной щеткой, кровоточат или болят ли у Вас десны?",
+  "added_at": "2021-07-24T04:48:29.418Z",
+  "quest": 1,
+  "order": 7,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   4
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 8,
+ "fields": {
+  "title": "Проводилось ли Вам лечение десен или говорили ли Вам, что у Вас есть потеря костной ткани около зубов?",
+  "added_at": "2021-07-24T04:48:29.421Z",
+  "quest": 1,
+  "order": 8,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   4
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 9,
+ "fields": {
+  "title": "Замечали ли Вы когда-нибудь неприятный привкус во рту или запах?",
+  "added_at": "2021-07-24T04:48:29.423Z",
+  "quest": 1,
+  "order": 9,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   4
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 10,
+ "fields": {
+  "title": "Есть ли у кого-нибудь в Вашей семье пародонтит (заболевание десен)?",
+  "added_at": "2021-07-24T04:48:29.426Z",
+  "quest": 1,
+  "order": 10,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   4
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 11,
+ "fields": {
+  "title": "Была ли у Вас когда-нибудь рецессия десен (оголение корней зубов)?",
+  "added_at": "2021-07-24T04:48:29.428Z",
+  "quest": 1,
+  "order": 11,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   4
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 12,
+ "fields": {
+  "title": "Появлялась ли у Вас расшатанность зубов (самопроизвольно , без травмы)? Трудно ли Вам есть яблоко?",
+  "added_at": "2021-07-24T04:48:29.430Z",
+  "quest": 1,
+  "order": 12,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   4
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 13,
+ "fields": {
+  "title": "Вы когда-нибудь испытывали чувство жжения во рту не связанное с зубами?",
+  "added_at": "2021-07-24T04:48:29.432Z",
+  "quest": 1,
+  "order": 13,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   4
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 14,
+ "fields": {
+  "title": "Появлялся ли у Вас кариес в последние 3 года?",
+  "added_at": "2021-07-24T04:48:29.434Z",
+  "quest": 1,
+  "order": 14,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   5
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 15,
+ "fields": {
+  "title": "Есть ли у Вас ощущение недостаточного количества слюны во рту или испытываете ли Вы трудности с проглатыванием какой-либо пищи?",
+  "added_at": "2021-07-24T04:48:29.436Z",
+  "quest": 1,
+  "order": 15,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 16,
+ "fields": {
+  "title": "Чувствуете или видите ли Вы ямки (впадины ,углубления) на жевательной поверхности зубов?",
+  "added_at": "2021-07-24T04:48:29.440Z",
+  "quest": 1,
+  "order": 16,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   6
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 17,
+ "fields": {
+  "title": "Реагируют ли Ваши зубы болезненно на горячее, холодное, сладкое или болят, когда Вы кусаете; Избегаете ли Вы чистку каких-либо зубов?",
+  "added_at": "2021-07-24T04:48:29.443Z",
+  "quest": 1,
+  "order": 17,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   5
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 18,
+ "fields": {
+  "title": "Есть ли у Вас бороздки или выемки на зубах возле десневого края?",
+  "added_at": "2021-07-24T04:48:29.448Z",
+  "quest": 1,
+  "order": 18,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   6
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 19,
+ "fields": {
+  "title": "Бывали ли случаи, когда у Вас ломался или откалывался зуб, болел зуб или скалывалась пломба?",
+  "added_at": "2021-07-24T04:48:29.451Z",
+  "quest": 1,
+  "order": 19,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   6
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 20,
+ "fields": {
+  "title": "Часто ли у Вас застревает пища между зубами?",
+  "added_at": "2021-07-24T04:48:29.456Z",
+  "quest": 1,
+  "order": 20,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   5
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 21,
+ "fields": {
+  "title": "Есть ли у Вас проблемы с височно-нижнечелюстным суставом? (боль, звуки, ограниченное открывание, щелчки)",
+  "added_at": "2021-07-24T04:48:29.459Z",
+  "quest": 1,
+  "order": 21,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   8
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 22,
+ "fields": {
+  "title": "При смыкании зубов, чувствуете ли Вы , что нижняя челюсть вынужденно задвигается назад?",
+  "added_at": "2021-07-24T04:48:29.461Z",
+  "quest": 1,
+  "order": 22,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   8
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 23,
+ "fields": {
+  "title": "Испытываете ли Вы трудности с жеванием или избегаете ли Вы жвачку, морковь, орехи, сухари, багет, белковые батончики или другую твердую и сухую пищу?",
+  "added_at": "2021-07-24T04:48:29.464Z",
+  "quest": 1,
+  "order": 23,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   8
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 24,
+ "fields": {
+  "title": "Изменились ли Ваши зубы за последние 5 лет, стали ли они короче, тоньше, истерлись?",
+  "added_at": "2021-07-24T04:48:29.466Z",
+  "quest": 1,
+  "order": 24,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   7
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 25,
+ "fields": {
+  "title": "Замечаете ли Вы, что у Вас повышается искривленность зубов, скученность или перекрытие?",
+  "added_at": "2021-07-24T04:48:29.469Z",
+  "quest": 1,
+  "order": 25,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   6
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 26,
+ "fields": {
+  "title": "Увеличиваются ли у Вас промежутки между зубами или становятся ли Ваши зубы более подвижными?",
+  "added_at": "2021-07-24T04:48:29.473Z",
+  "quest": 1,
+  "order": 26,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   4
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 27,
+ "fields": {
+  "title": "Чтобы зубы лучше смыкались, нужно ли Вам сжимать или сдвигать челюсти? Или у Вас несколько положений прикуса?",
+  "added_at": "2021-07-24T04:48:29.478Z",
+  "quest": 1,
+  "order": 27,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   7
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 28,
+ "fields": {
+  "title": "Держите ли Вы язык между зубами или смыкаете ли Вы зубы на языке для удобства положения нижней челюсти?",
+  "added_at": "2021-07-24T04:48:29.482Z",
+  "quest": 1,
+  "order": 28,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   6
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 29,
+ "fields": {
+  "title": "Есть ли у Вас вредные привычки- жевание льда, кусание ногтей, держать зубами предметы и т.п.?",
+  "added_at": "2021-07-24T04:48:29.485Z",
+  "quest": 1,
+  "order": 29,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   6
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 30,
+ "fields": {
+  "title": "Стискиваете ли Вы зубы днем, доводите ли Вы их до болезненного состояния?",
+  "added_at": "2021-07-24T04:48:29.488Z",
+  "quest": 1,
+  "order": 30,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   6
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 31,
+ "fields": {
+  "title": "Есть ли у Вас проблемы со сном (т.е. беспокойный сон), просыпаетесь ли Вы с головной болью или с чувством ощущения собственных зубов?",
+  "added_at": "2021-07-24T04:48:29.491Z",
+  "quest": 1,
+  "order": 31,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   6
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 32,
+ "fields": {
+  "title": "Носите ли Вы или носили ли когда-нибудь зубные каппы ( предохраняющие зубы )?",
+  "added_at": "2021-07-24T04:48:29.494Z",
+  "quest": 1,
+  "order": 32,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   6
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 33,
+ "fields": {
+  "title": "Хотите ли Вы изменить что-нибудь во внешнем виде Ваших зубов?",
+  "added_at": "2021-07-24T04:48:29.496Z",
+  "quest": 1,
+  "order": 33,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   7
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 34,
+ "fields": {
+  "title": "Делали ли Вы когда-либо отбеливание зубов?",
+  "added_at": "2021-07-24T04:48:29.499Z",
+  "quest": 1,
+  "order": 34,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   7
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 35,
+ "fields": {
+  "title": "Стесняетесь ли Вы или испытываете дискомфорт из-за внешнего вида своих зубов?",
+  "added_at": "2021-07-24T04:48:29.502Z",
+  "quest": 1,
+  "order": 35,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   7
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 36,
+ "fields": {
+  "title": "Были ли Вы когда либо разочарованы эстетическими результатами предыдущего лечения?",
+  "added_at": "2021-07-24T04:48:29.506Z",
+  "quest": 1,
+  "order": 36,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   7
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 37,
+ "fields": {
+  "title": "Госпитализация в результате заболевания или травмы",
+  "added_at": "2021-07-24T05:08:09.593Z",
+  "quest": 2,
+  "order": 1,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   1
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 38,
+ "fields": {
+  "title": "Аллергическая реакция на",
+  "added_at": "2021-07-24T05:08:09.625Z",
+  "quest": 2,
+  "order": 2,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 39,
+ "fields": {
+  "title": "Проблемы с сердцем, ИБС, стенты или АКШ в последние 6 мес.",
+  "added_at": "2021-07-24T05:08:09.628Z",
+  "quest": 2,
+  "order": 3,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 40,
+ "fields": {
+  "title": "Инфекционный эндокардит",
+  "added_at": "2021-07-24T05:08:09.631Z",
+  "quest": 2,
+  "order": 4,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 41,
+ "fields": {
+  "title": "Искусственный клапан, пластика порока сердца",
+  "added_at": "2021-07-24T05:08:09.633Z",
+  "quest": 2,
+  "order": 5,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 42,
+ "fields": {
+  "title": "Вводитель ритма или имплантируемый дефибриллятор",
+  "added_at": "2021-07-24T05:08:09.636Z",
+  "quest": 2,
+  "order": 6,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 43,
+ "fields": {
+  "title": "Ортопедический имплант (замена сустава)",
+  "added_at": "2021-07-24T05:08:09.640Z",
+  "quest": 2,
+  "order": 7,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 44,
+ "fields": {
+  "title": "Ревматизм или скарлатина",
+  "added_at": "2021-07-24T05:08:09.643Z",
+  "quest": 2,
+  "order": 8,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   1
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 45,
+ "fields": {
+  "title": "Высокое или низкое артериальное давление",
+  "added_at": "2021-07-24T05:08:09.647Z",
+  "quest": 2,
+  "order": 9,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 46,
+ "fields": {
+  "title": "Инсульт (принимаете антикоагулянты)",
+  "added_at": "2021-07-24T05:08:09.649Z",
+  "quest": 2,
+  "order": 10,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 47,
+ "fields": {
+  "title": "Анемия или другое заболевание крови",
+  "added_at": "2021-07-24T05:08:09.651Z",
+  "quest": 2,
+  "order": 11,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   1
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 48,
+ "fields": {
+  "title": "Длительное кровотечение при легком порезе (МНО>3,5)",
+  "added_at": "2021-07-24T05:08:09.653Z",
+  "quest": 2,
+  "order": 12,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 49,
+ "fields": {
+  "title": "Эмфизема, одышка, саркоидоз",
+  "added_at": "2021-07-24T05:08:09.656Z",
+  "quest": 2,
+  "order": 13,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 50,
+ "fields": {
+  "title": "Туберкулез, корь, ветрянка",
+  "added_at": "2021-07-24T05:08:09.660Z",
+  "quest": 2,
+  "order": 14,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 51,
+ "fields": {
+  "title": "Астма",
+  "added_at": "2021-07-24T05:08:09.664Z",
+  "quest": 2,
+  "order": 15,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 52,
+ "fields": {
+  "title": "Проблемы с дыханием или сном (т.е. насморк, храп, синуситы)",
+  "added_at": "2021-07-24T05:08:09.668Z",
+  "quest": 2,
+  "order": 16,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   1
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 53,
+ "fields": {
+  "title": "Заболевание почек",
+  "added_at": "2021-07-24T05:08:09.671Z",
+  "quest": 2,
+  "order": 17,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 54,
+ "fields": {
+  "title": "Заболевание печени",
+  "added_at": "2021-07-24T05:08:09.674Z",
+  "quest": 2,
+  "order": 18,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 55,
+ "fields": {
+  "title": "Желтуха",
+  "added_at": "2021-07-24T05:08:09.677Z",
+  "quest": 2,
+  "order": 19,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 56,
+ "fields": {
+  "title": "Заболевания щитовидной/паращитовидной железы или дефицит кальция",
+  "added_at": "2021-07-24T05:08:09.680Z",
+  "quest": 2,
+  "order": 20,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 57,
+ "fields": {
+  "title": "Гормональная недостаточность",
+  "added_at": "2021-07-24T05:08:09.684Z",
+  "quest": 2,
+  "order": 21,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 58,
+ "fields": {
+  "title": "Высокий холестерин или прием статинов",
+  "added_at": "2021-07-24T05:08:09.688Z",
+  "quest": 2,
+  "order": 22,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 59,
+ "fields": {
+  "title": "Диабет (HbA1c=)",
+  "added_at": "2021-07-24T05:08:09.692Z",
+  "quest": 2,
+  "order": 23,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 60,
+ "fields": {
+  "title": "Язва желудка или двенадцатиперстной кишки",
+  "added_at": "2021-07-24T05:08:09.695Z",
+  "quest": 2,
+  "order": 24,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 61,
+ "fields": {
+  "title": "Расстройства пищеварения (т.е. целиакия, желудочный рефлюкс)",
+  "added_at": "2021-07-24T05:08:09.698Z",
+  "quest": 2,
+  "order": 25,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 62,
+ "fields": {
+  "title": "Остеопороз/остеопения (т.е. принимаете бисфосфонаты)",
+  "added_at": "2021-07-24T05:08:09.701Z",
+  "quest": 2,
+  "order": 26,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   1
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 63,
+ "fields": {
+  "title": "Артрит",
+  "added_at": "2021-07-24T05:08:09.706Z",
+  "quest": 2,
+  "order": 27,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 64,
+ "fields": {
+  "title": "Аутоиммунное заболевание (т.е. ревматоидный артрит, волчанка, склеродермия)",
+  "added_at": "2021-07-24T05:08:09.710Z",
+  "quest": 2,
+  "order": 28,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 65,
+ "fields": {
+  "title": "Глаукома",
+  "added_at": "2021-07-24T05:08:09.714Z",
+  "quest": 2,
+  "order": 29,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 66,
+ "fields": {
+  "title": "Контактные линзы",
+  "added_at": "2021-07-24T05:08:09.717Z",
+  "quest": 2,
+  "order": 30,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 67,
+ "fields": {
+  "title": "Травмы головы и шеи",
+  "added_at": "2021-07-24T05:08:09.719Z",
+  "quest": 2,
+  "order": 31,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 68,
+ "fields": {
+  "title": "Эпилепсия, судороги (приступы)",
+  "added_at": "2021-07-24T05:08:09.722Z",
+  "quest": 2,
+  "order": 32,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 69,
+ "fields": {
+  "title": "Неврологические расстройства (СДВ, СДВГ, прионная болезнь)",
+  "added_at": "2021-07-24T05:08:09.726Z",
+  "quest": 2,
+  "order": 33,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 70,
+ "fields": {
+  "title": "Вирусные инфекции и герпес",
+  "added_at": "2021-07-24T05:08:09.732Z",
+  "quest": 2,
+  "order": 34,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 71,
+ "fields": {
+  "title": "Любые образования или припухлости во рту",
+  "added_at": "2021-07-24T05:08:09.736Z",
+  "quest": 2,
+  "order": 35,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 72,
+ "fields": {
+  "title": "Крапивница, кожная сыпь, сенная лихорадка",
+  "added_at": "2021-07-24T05:08:09.738Z",
+  "quest": 2,
+  "order": 36,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 73,
+ "fields": {
+  "title": "Венерические заболевания/папилломавирус",
+  "added_at": "2021-07-24T05:08:09.741Z",
+  "quest": 2,
+  "order": 37,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 74,
+ "fields": {
+  "title": "Гепатит (тип)",
+  "added_at": "2021-07-24T05:08:09.744Z",
+  "quest": 2,
+  "order": 38,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   1
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 75,
+ "fields": {
+  "title": "ВИЧ/СПИД",
+  "added_at": "2021-07-24T05:08:09.748Z",
+  "quest": 2,
+  "order": 39,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   1
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 76,
+ "fields": {
+  "title": "Опухоль, патологические образования",
+  "added_at": "2021-07-24T05:08:09.752Z",
+  "quest": 2,
+  "order": 40,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 77,
+ "fields": {
+  "title": "Лучевая терапия",
+  "added_at": "2021-07-24T05:08:09.756Z",
+  "quest": 2,
+  "order": 41,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   1
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 78,
+ "fields": {
+  "title": "Химиотерапия, иммуносупрессивные препараты",
+  "added_at": "2021-07-24T05:08:09.760Z",
+  "quest": 2,
+  "order": 42,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   1
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 79,
+ "fields": {
+  "title": "Эмоциональные проблемы",
+  "added_at": "2021-07-24T05:08:09.763Z",
+  "quest": 2,
+  "order": 43,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   2
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 80,
+ "fields": {
+  "title": "Психиатрическое лечение",
+  "added_at": "2021-07-24T05:08:09.766Z",
+  "quest": 2,
+  "order": 44,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   2
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 81,
+ "fields": {
+  "title": "Прием антидепрессантов",
+  "added_at": "2021-07-24T05:08:09.770Z",
+  "quest": 2,
+  "order": 45,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   2
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 82,
+ "fields": {
+  "title": "Алкоголь/наркотики (иногда)",
+  "added_at": "2021-07-24T05:08:09.774Z",
+  "quest": 2,
+  "order": 46,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 83,
+ "fields": {
+  "title": "В настоящее время лечитесь от какого-либо заболевания",
+  "added_at": "2021-07-24T05:08:09.778Z",
+  "quest": 2,
+  "order": 47,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 84,
+ "fields": {
+  "title": "Чувствуете изменения в состоянии Вашего здоровья за последние 24 часа (т.е. температура, озноб, кашель или понос)",
+  "added_at": "2021-07-24T05:08:09.782Z",
+  "quest": 2,
+  "order": 48,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 85,
+ "fields": {
+  "title": "Принимаете лекарственные препараты для контроля веса",
+  "added_at": "2021-07-24T05:08:09.784Z",
+  "quest": 2,
+  "order": 49,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 86,
+ "fields": {
+  "title": "Принимаете пищевые добавки",
+  "added_at": "2021-07-24T05:08:09.786Z",
+  "quest": 2,
+  "order": 50,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 87,
+ "fields": {
+  "title": "Часто бываете утомлены или измождены",
+  "added_at": "2021-07-24T05:08:09.791Z",
+  "quest": 2,
+  "order": 51,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   2
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 88,
+ "fields": {
+  "title": "Часто страдаете от головной боли",
+  "added_at": "2021-07-24T05:08:09.794Z",
+  "quest": 2,
+  "order": 52,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   2
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 89,
+ "fields": {
+  "title": "Курите, курили в прошлом или используете табак в иной форме",
+  "added_at": "2021-07-24T05:08:09.798Z",
+  "quest": 2,
+  "order": 53,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   2
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 90,
+ "fields": {
+  "title": "Считаетесь обидчивым/чувствительным человеком",
+  "added_at": "2021-07-24T05:08:09.801Z",
+  "quest": 2,
+  "order": 54,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   2
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 91,
+ "fields": {
+  "title": "Часто чувствуете себя несчастным или подавленным",
+  "added_at": "2021-07-24T05:08:09.803Z",
+  "quest": 2,
+  "order": 55,
+  "answer_options": "Да\r\nНет",
+  "keywords": [
+   2
+  ]
+ }
+},
+{
+ "model": "core.question",
+ "pk": 92,
+ "fields": {
+  "title": "ЖЕНЩИНА – принимаете противозачаточные таблетки",
+  "added_at": "2021-07-24T05:08:09.806Z",
+  "quest": 2,
+  "order": 56,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 93,
+ "fields": {
+  "title": "ЖЕНЩИНА – беременны",
+  "added_at": "2021-07-24T05:08:09.810Z",
+  "quest": 2,
+  "order": 57,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.question",
+ "pk": 94,
+ "fields": {
+  "title": "МУЖЧИНА – заболевания простаты",
+  "added_at": "2021-07-24T05:08:09.815Z",
+  "quest": 2,
+  "order": 58,
+  "answer_options": "Да\r\nНет",
+  "keywords": []
+ }
+},
+{
+ "model": "core.quest",
+ "pk": 1,
+ "fields": {
+  "added_at": "2021-07-24T04:47:55.121Z",
+  "name": "СТОМАТОЛОГИЧЕСКИЙ АНАМНЕЗ"
+ }
+},
+{
+ "model": "core.quest",
+ "pk": 2,
+ "fields": {
+  "added_at": "2021-07-24T05:05:44.237Z",
+  "name": "МЕДИЦИНСКИЙ АНАМНЕЗ"
+ }
+},
+{
+ "model": "core.keyword",
+ "pk": 1,
+ "fields": {
+  "name": "Важно заболевания",
+  "quest": 2
+ }
+},
+{
+ "model": "core.keyword",
+ "pk": 2,
+ "fields": {
+  "name": "Внимательно к пациенту",
+  "quest": 2
+ }
+},
+{
+ "model": "core.keyword",
+ "pk": 3,
+ "fields": {
+  "name": "Внимательно к пациенту",
+  "quest": 1
+ }
+},
+{
+ "model": "core.keyword",
+ "pk": 4,
+ "fields": {
+  "name": "Нужен пародонтолог",
+  "quest": 1
+ }
+},
+{
+ "model": "core.keyword",
+ "pk": 5,
+ "fields": {
+  "name": "Нужен терапевт",
+  "quest": 1
+ }
+},
+{
+ "model": "core.keyword",
+ "pk": 6,
+ "fields": {
+  "name": "Нужен ортодонт",
+  "quest": 1
+ }
+},
+{
+ "model": "core.keyword",
+ "pk": 7,
+ "fields": {
+  "name": "Нужен ортопед",
+  "quest": 1
+ }
+},
+{
+ "model": "core.keyword",
+ "pk": 8,
+ "fields": {
+  "name": "Суставной пациент",
+  "quest": 1
+ }
+}
+]

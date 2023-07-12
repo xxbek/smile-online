@@ -1,0 +1,131 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block extra_css %}
+<style>
+    .table-hover > tbody > tr.white-row:hover > td,
+    .white-row > td {
+        background-color: white;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="col-12 col-lg-10 offset-lg-1">
+    <h1>{{ title }}</h1>
+    <div class="content px-3 my-4">
+        <p><big>ФИО: {{ patient.fio }}</big></p>
+        <p class="text-muted mb-4">Дата прохождения: {{ patient.added_at }}</p>
+        <h4 class="mb-3">Ключевые слова анкеты:</h4>
+        {% for keyword, exact_answers in patient.get_keywords_with_answers %}
+        <table class="table table-hover table-bordered">
+            <tbody>
+            <tr>
+                <td colspan="2">
+                    <p>
+                        {{ keyword.name }}
+                    </p>
+                    {% if exact_answers %}
+                    <button class="btn btn-sm btn-primary" data-toggle="collapse" data-target=".multi-collapse_{{ keyword.id }}" aria-expanded="false" aria-controls="{% for answer in exact_answers %}collapse_{{ keyword.id }}_{{ answer.id }} {% endfor %}">Подробнее</button>
+                    {% endif %}
+                </td>
+            </tr>
+            {% for answer in exact_answers %}
+            <tr class="white-row collapse multi-collapse_{{ keyword.id }}" id="collapse_{{ keyword.id }}_{{ answer.id }}">
+                <td>{{answer.question.title }}</td>
+                <td>{{answer.answer }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% endfor %}
+        <div class="row mt-4">
+            {% if patient.can_edit %}
+            <div class="col-12 col-md-6 my-3">
+                <h5 class="mb-3">Добавить ключевое слово из списка в анкету</h5>
+                <form method="post" class="form-inline">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="set_keyword">
+                    <div class="form-group">
+                        <select name="keyword" class="form-control" required>
+                            <option value="" selected="selected" disabled="disabled">Выберите ключевое слово...</option>
+                            {% for keyword in all_keywords %}
+                            {% if keyword not in patient.keywords.all %}
+                            <option value="{{ keyword.id }}">{{ keyword.name }}</option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary mx-2">Выбрать</button>
+                </form>
+            </div>
+            <div class="col-12 col-md-6 my-3">
+                <h5 class="mb-3">Создать новое ключевое слово</h5>
+                <form method="post" class="form-inline">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="add_keyword">
+                    <div class="form-group">
+                        <input type="text" name="name" maxlength="100" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary mx-2">Создать</button>
+                </form>
+            </div>
+            <div class="col-12 col-md-12 my-3">
+                <h4 class="mb-2">Сохранить анкету</h4>
+                <p>После сохранения анкеты, вы не сможете изменять её ключевые слова.</p>
+                <form method="post" class="form-inline" id="save_patient_form">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="save_patient">
+                    <button type="submit" class="btn btn-primary mx-2">Сохранить</button>
+                </form>
+            </div>
+            {% else %}
+            <div class="col-12 my-3">
+                <p>Анкета сохранена. Редактирование невозможно.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <hr/>
+    <button class="btn btn-sm btn-primary mt-4" type="button" data-toggle="collapse" data-target="#collapseAllAnswers" aria-expanded="false" aria-controls="collapseAllAnswers">Отобразить все ответы анкеты</button>
+    <div class="collapse row mt-4" id="collapseAllAnswers">
+        <div class="col-12">
+            <h4>Все ответы</h4>
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Вопрос</th>
+                    <th>Ответ</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for answer in patient.answers.all %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ answer.question.title }}</td>
+                    <td>{{ answer.answer }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<script type="text/javascript">
+    $('#save_patient_form').submit(function(e) {
+        e.preventDefault();
+        if (!confirm('Вы уверены, что хотите завершить редактирование ключевых слов и сохранить анкету?')) {
+            return false;
+        }
+        $(this).unbind();
+        $(this).submit();
+    });
+</script>
+{% endblock %}

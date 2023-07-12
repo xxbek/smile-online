@@ -1,0 +1,4 @@
+Django==3.2.5
+django-admin-sortable2==1.0
+django-crispy-forms==1.12.0
+djangorestframework==3.12.4

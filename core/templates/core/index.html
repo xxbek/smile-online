@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="col-12 col-lg-10 offset-lg-1">
+    <h1>{{ title }}</h1>
+    <div class="content px-3 my-4">
+        <p class="text-muted">Для создания новой анкеты, пожалуйста, заполните поля ниже.</p>
+        <div class="row">
+            <div class="col-12 col-lg-6 col-xl-5">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ questionnaire_form|crispy }}
+                    <button type="submit" class="btn btn-primary">Создать анкету</button>
+                </form>
+            </div>
+        </div>
+        <h2 class="mt-5">Ваши анкеты:</h2>
+        {% if your_questionnaires %}
+        <ul>
+            {% for qst in your_questionnaires %}
+            <li><a href="{% url 'core:questionnaire' slug=qst.slug %}">{{ qst.fio }} <small class="text-muted">{{ qst.added_at }} (<b>{{ qst.get_cur_question_number }} / {{ qst.get_total_questions_count }}</b>)</small></a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>У вас пока нет созданных анкет. Для создания заполните форму выше.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
