@@ -15,6 +15,15 @@
 {% block content %}
 <div class="col-12 col-lg-10 offset-lg-1">
     <h1>{{ title }}</h1>
+    <form action="{% url 'core:generate_pdf' patient_pk=patient.pk %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary mx-2">Скачать PDF</button>
+    </form>
+    <br>
+    <form action="{% url 'core:generate_pdf' patient_pk=patient.pk %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary mx-2">Отправить PDF</button>
+    </form>
     <div class="content px-3 my-4">
         <p><big>ФИО: {{ patient.fio }}</big></p>
         <p class="text-muted mb-4">Дата прохождения: {{ patient.added_at }}</p>

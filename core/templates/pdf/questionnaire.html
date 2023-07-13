@@ -1,0 +1,73 @@
+{% extends 'pdf/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block extra_css %}
+<style type="text/css">
+        @font-face {
+        font-family: "Alice-Regular";
+        src: url({{STATIC_ROOT}}/fonts/Alice-Regular.ttf) ;
+        }
+
+        body {
+        font-family: Alice-Regular;
+        font-size: 14px;
+        }
+        h1 {text-align:center; font-size: 30px;}
+
+        table, th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+
+
+
+</style>
+
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="col-12 col-lg-10 offset-lg-1">
+    <h1>{{ title }}</h1>
+    <div class="content px-3 my-4">
+        <p>Имя и Фамилия пациента: {{ patient.fio }}</p>
+        <p class="text-muted mb-4">Дата рождения: {{ patient.dob }}</p>
+        <p class="text-muted mb-4">Дата прохождения: {{ patient.added_at }}</p>
+    </div>
+    <hr/>
+    <div class="collapse row mt-4" id="collapseAllAnswers">
+        <div class="col-12">
+            <h4>Ответы:</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th >#</th>
+                    <th>Вопрос</th>
+                    <th>Ответ</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for answer in patient.answers.all %}
+                <tr>
+                    <td style="width: 10%;">{{ forloop.counter }}</td>
+                    <td style="width: 80%;">{{ answer.question.title }}</td>
+                    <td style="width: 10%;">{{ answer.answer }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<script type="text/javascript">
+
+</script>
+{% endblock %}

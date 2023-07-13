@@ -5,6 +5,12 @@ from django.views.decorators.http import require_http_methods
 from core.forms import QuestionnaireForm
 from core.models import Questionnaire, Answer, Keyword
 
+from core.utils import render_to_pdf
+from django.http import HttpResponse
+from django.views.generic import View
+
+from smile_online import settings
+
 
 @require_http_methods(['GET', 'POST'])
 def index(request, template_name='core/index.html'):
@@ -90,3 +96,22 @@ def questionnaire_page(request, slug, template_name='core/questionnaire.html'):
         'next_question': next_question,
     }
     return render(request, template_name, context=context)
+
+
+class GeneratePDF(View):
+    def post(self, request, *args, **kwargs):
+        patient_pk = kwargs.get('patient_pk')
+        patient = get_object_or_404(Questionnaire, id=patient_pk)
+        quest = patient.quest
+
+        if patient:
+            data = {
+                'patient': patient,
+                'quest': quest,
+                'title': quest.name,
+                'STATIC_ROOT': settings.STATIC_ROOT
+            }
+            pdf = render_to_pdf('pdf/questionnaire.html', data, 'myPDF')
+            return HttpResponse(pdf, content_type='application/pdf')
+
+        return HttpResponse("Not found")
