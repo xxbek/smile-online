@@ -24,5 +24,6 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(extra_context={'page_name': 'login'}), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('webhook/', include('webhook.urls', namespace='webhook')),
     path('', include('core.urls', namespace='core')),
 ]

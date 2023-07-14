@@ -16,15 +16,26 @@
 <div class="col-12 col-lg-10 offset-lg-1">
     <h1>{{ title }}</h1>
     <form action="{% url 'core:generate_pdf' patient_pk=patient.pk %}" method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-primary mx-2">Скачать PDF</button>
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary mx-2">Скачать PDF</button>
     </form>
     <br>
-    <form action="{% url 'core:generate_pdf' patient_pk=patient.pk %}" method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-primary mx-2">Отправить PDF</button>
+    <form enctype="multipart/form-data" action="{% url 'webhook:send_document' patient_pk=patient.pk %}" method="post" >
+        {% csrf_token %}
+        <input type="hidden" name="action" value="send_document">
+        <button type="submit" class="btn btn-primary mx-2">Отправить PDF</button>
+        Выберите файл: <input type="file" name="pdf" value="send_document" accept="application/pdf"/>
+
     </form>
+
     <div class="content px-3 my-4">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
         <p><big>ФИО: {{ patient.fio }}</big></p>
         <p class="text-muted mb-4">Дата прохождения: {{ patient.added_at }}</p>
         <h4 class="mb-3">Ключевые слова анкеты:</h4>

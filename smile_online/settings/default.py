@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'rest_framework',
     'core',
+    'webhook'
 ]
 
 MIDDLEWARE = [
