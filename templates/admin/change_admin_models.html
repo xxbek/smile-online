@@ -1,0 +1,19 @@
+{% extends 'admin/change_form.html' %}
+
+{% block object-tools %}
+    {{ block.super }}
+<hr/>
+    <form action="{% url 'core:generate_pdf' patient_pk=original.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary mx-2">Открыть PDF</button>
+    </form>
+<hr/>
+    <form enctype="multipart/form-data" action="{% url 'webhook:send_document' patient_pk=original.id %}" method="post" >
+        {% csrf_token %}
+        <input type="hidden" name="action" value="send_document">
+        <button type="submit" class="btn btn-primary mx-2">Отправить PDF в Битрикс</button>
+
+    </form>
+<hr/>
+{% endblock %}
+

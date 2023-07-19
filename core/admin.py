@@ -24,12 +24,14 @@ class AnswerInline(admin.TabularInline):
 
 
 class QuestionnaireAdmin(admin.ModelAdmin):
-    fields = ('fio', 'dob', 'phone_number', 'eula_is_accepted', 'quest', 'slug', 'added_at', 'keywords', 'can_edit')
+    fields = ('fio', 'dob', 'phone_number', 'eula_is_accepted', 'quest', 'slug', 'added_at', 'keywords', 'can_edit', 'last_send_file_date')
     readonly_fields = ('added_at',)
-    list_display = ('fio', 'dob', 'phone_number', 'eula_is_accepted', 'added_at', 'slug', 'get_cur_question_number', 'quest', 'can_edit')
+    list_display = ('fio', 'dob', 'phone_number', 'eula_is_accepted', 'added_at', 'slug', 'get_cur_question_number', 'quest', 'can_edit', 'last_send_file_date')
     list_filter = ('added_at', 'quest', 'keywords', 'can_edit', 'eula_is_accepted')
     search_fields = ('fio',)
     inlines = [AnswerInline]
+
+    change_form_template = "admin/change_admin_models.html"
 
 
 class KeywordAdmin(admin.ModelAdmin):

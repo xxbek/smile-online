@@ -1,6 +1,5 @@
 import os
 from io import BytesIO
-from django.http import HttpResponse
 from django.template.loader import get_template
 
 from xhtml2pdf import pisa
@@ -37,7 +36,6 @@ def render_to_pdf(template_src, context_dict, filename, ):
     pdf = pisa.CreatePDF(BytesIO(html.encode('utf-8')), result, encoding='UTF-8', link_callback=fetch_resources, )
 
     if not pdf.err:
-        response = HttpResponse(result.getvalue(), content_type='application/pdf')
-        response['Content-Disposition'] = 'attachment; filename=%s' % filename
-        return response
-    return HttpResponse('Ошибка! <b>%s</b>' % pdf.err)
+        return result.getvalue()
+
+    raise Exception('PDF generation error')

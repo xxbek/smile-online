@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.utils import timezone
 from django.utils.crypto import get_random_string
 
 
@@ -107,6 +108,12 @@ class Questionnaire(models.Model):
         blank=True, default=True,
         help_text='Может ли доктор редактировать ключевые слова анкеты?',
     )
+    last_send_file_date = models.DateTimeField(
+        verbose_name='Дата последней отправки',
+        null=True,
+        blank=True,
+        help_text='Дата последней отправки данных анкеты в Битрикс',
+    )
 
     def __str__(self):
         return '{} {}'.format(self.added_at.strftime('%Y-%m-%d'), self.fio)
@@ -154,6 +161,10 @@ class Questionnaire(models.Model):
                 keyword, exact_answers
             ])
         return items
+
+    def update_send_file_date(self):
+        self.last_send_file_date = timezone.now().replace(microsecond=0)
+        self.save()
 
 
 class Answer(models.Model):

@@ -18,11 +18,13 @@ def send_file_to(file: InMemoryUploadedFile, url: str, body: dict) -> bool:
 
 def generate_body(patient: Questionnaire, quest: Quest) -> dict:
     body = {
-        'fullname': patient.fio,
+        'fio': patient.fio,
         'birthday': patient.dob,
-        'phone': patient.phone_number,
-        'questionnaire_type': quest.name,
-        'questionnaire_creation_date': patient.added_at
+        'address': patient.slug,
+        'mobile': patient.phone_number,
+        'number_per': quest.name,
+        'date': patient.added_at,
+        'word_key': [keyword[0].name for keyword in patient.get_keywords_with_answers()]
     }
     return body
 
