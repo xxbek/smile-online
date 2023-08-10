@@ -16,9 +16,15 @@
         h1 {text-align:center; font-size: 30px;}
 
         table, th, td {
+        border-collapse: collapse;
+
   border: 1px solid black;
-  padding: 5px;
+  padding: 4px;
 }
+
+.visible-space {
+    white-space: pre; /* Запрещаем схлопывание пробелов */
+  }
 
 
 
@@ -60,9 +66,48 @@
                 {% endfor %}
                 </tbody>
             </table>
+
+
         </div>
+
+        {% if quest.id == 2 or quest.name == 'МЕДИЦИНСКИЙ АНАМНЕЗ' %}
+            <p style="text-align: center;">
+                Опишите, какое медицинское лечение Вы получаете в настоящий момент, предстоящие хирургические операции, генетические заболевания, задержки
+в развитии или другие виды лечения, которые могут повлиять на Ваше стоматологическое лечение (например, инъекции ботокса или коллагена).
+            </p>
+            <hr>
+            <p style="text-align: center;">Укажите все лекарственные препараты, добавки и витамины, которые Вы принимали в течение последних двух лет.</p>
+            <table>
+                <thead>
+                <tr>
+                    <th>Лекарственный препарат</th>
+                    <th>Цель приема</th>
+                    <th>Лекарственный препарат</th>
+                    <th>Цель приема</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for i in '123'|make_list %}
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            {% endif %}
+            <p class="visible-space">
+                Подпись пациента<u>                                                                                                                        </u>Дата<u>                      </u>
+
+                Подпись врача<u>                                                                                                                                </u>Дата<u>                      </u>
+            </p>
     </div>
 </div>
+
 {% endblock %}
 
 
