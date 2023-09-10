@@ -15,9 +15,14 @@
 {% block content %}
 <div class="col-12 col-lg-10 offset-lg-1">
     <h1>{{ title }}</h1>
-    <form action="{% url 'core:generate_pdf' patient_pk=patient.pk %}" method="post">
+    <form action="{% url 'core:generate_questionnaire' patient_pk=patient.pk %}" method="post" target="_blank">
         {% csrf_token %}
         <button type="submit" class="btn btn-primary mx-2">Открыть PDF</button>
+    </form>
+    <br>
+    <form action="{% url 'core:generate_keywords' patient_pk=patient.pk %}" method="post" target="_blank">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary mx-2">Открыть ключевые слова пациента</button>
     </form>
     <br>
     <form enctype="multipart/form-data" action="{% url 'webhook:send_document' patient_pk=patient.pk %}" method="post" >

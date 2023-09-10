@@ -98,20 +98,39 @@ def questionnaire_page(request, slug, template_name='core/questionnaire.html'):
     return render(request, template_name, context=context)
 
 
-class GeneratePDF(View):
-    def post(self, request, *args, **kwargs):
-        patient_pk = kwargs.get('patient_pk')
-        patient = get_object_or_404(Questionnaire, id=patient_pk)
-        quest = patient.quest
+@require_http_methods('POST')
+def pdf_user_questionnaire(request, patient_pk):
+    patient = get_object_or_404(Questionnaire, id=patient_pk)
+    quest = patient.quest
 
-        if patient:
-            data = {
-                'patient': patient,
-                'quest': quest,
-                'title': quest.name,
-                'STATIC_ROOT': settings.STATIC_ROOT
-            }
-            pdf = render_to_pdf('pdf/questionnaire.html', data, 'myPDF')
-            return HttpResponse(pdf, content_type='application/pdf')
+    if patient:
+        data = {
+            'patient': patient,
+            'quest': quest,
+            'title': quest.name,
+            'word_key': [keyword[0].name for keyword in patient.get_keywords_with_answers()],
+            'STATIC_ROOT': settings.STATIC_ROOT
+        }
+        pdf = render_to_pdf('pdf/questionnaire.html', data, 'myPDF')
+        return HttpResponse(pdf, content_type='application/pdf')
 
-        return HttpResponse("Not found")
+    return HttpResponse("Not found")
+
+
+@require_http_methods('POST')
+def pdf_user_keywords(request, patient_pk):
+    patient: Questionnaire = get_object_or_404(Questionnaire, id=patient_pk)
+    all_questionnaire = Questionnaire.objects.filter(fio=patient.fio)
+    for questionnaire in all_questionnaire:
+        questionnaire.keyword = [keyword[0].name for keyword in questionnaire.get_keywords_with_answers()]
+    if patient:
+        data = {
+            'patient': patient,
+            'all_questionnaire': all_questionnaire,
+            'STATIC_ROOT': settings.STATIC_ROOT
+        }
+        pdf = render_to_pdf('pdf/patient_keywords.html', data, 'myPDF')
+        return HttpResponse(pdf, content_type='application/pdf')
+
+    return HttpResponse("Not found")
+

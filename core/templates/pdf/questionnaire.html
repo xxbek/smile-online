@@ -45,6 +45,13 @@
         <p class="text-muted mb-4">Дата прохождения: {{ patient.added_at }}</p>
     </div>
     <hr/>
+    <p>Ключевые слова анкеты:</p>
+    <ul>
+    {% for keyword in word_key %}
+        <li>{{ keyword }} </li>
+    {% endfor %}
+    </ul>
+
     <div class="collapse row mt-4" id="collapseAllAnswers">
         <div class="col-12">
             <h4>Ответы:</h4>

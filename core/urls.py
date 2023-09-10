@@ -22,5 +22,6 @@ urlpatterns = [
     path('patients/<int:patient_pk>/', views.one_patient_page, name='one_patient'),
     path('q/<slug:slug>/', views.questionnaire_page, name='questionnaire'),
     path('api/', include(router.urls)),
-    path('pdf/<int:patient_pk>/', views.GeneratePDF.as_view(), name='generate_pdf'),
+    path('pdf/questionnaire/<int:patient_pk>/', views.pdf_user_questionnaire, name='generate_questionnaire'),
+    path('pdf/keywords/<int:patient_pk>/', views.pdf_user_keywords, name='generate_keywords')
 ]

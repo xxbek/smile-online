@@ -1,0 +1,80 @@
+{% extends 'pdf/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block extra_css %}
+<style type="text/css">
+        @font-face {
+        font-family: "Alice-Regular";
+        src: url({{STATIC_ROOT}}/fonts/Alice-Regular.ttf) ;
+        }
+
+        body {
+        font-family: Alice-Regular;
+        font-size: 14px;
+        }
+        h1 {text-align:center; font-size: 30px;}
+
+        table, th, td {
+        border-collapse: collapse;
+
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.visible-space {
+    white-space: pre; /* Запрещаем схлопывание пробелов */
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="col-12 col-lg-10 offset-lg-1">
+    <h1>Ключевые слова для пациента</h1>
+    <div class="content px-3 my-4">
+        <p class="text-muted mb-4">Имя и Фамилия пациента: {{ patient.fio }}</p>
+        <p class="text-muted mb-4">Дата рождения: {{ patient.dob }}</p>
+        <p class="text-muted mb-4">Сотовый номер: {{ patient.phone_number }}</p>
+    </div>
+    <hr/>
+    <div class="collapse row mt-4" id="collapseAllAnswers">
+        <div class="col-12">
+            <h4>Ключевые слова:</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th >Дата прохождения</th>
+                    <th>Анкета</th>
+                    <th>Ключевые слова</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for patient in all_questionnaire %}
+                <tr>
+                    <td style="width: 20%;">{{ patient.added_at }}</td>
+                    <td style="width: 40%;">{{ patient.quest.name }}</td>
+                    <td style="width: 40%;">
+                        <ul>
+                            {% for keyword in patient.keyword %}
+                                <li>{{ keyword }} </li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p class="visible-space">
+            Подпись пациента<u>                                                                                                                        </u>Дата<u>                      </u>
+
+            Подпись врача<u>                                                                                                                                </u>Дата<u>                      </u>
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">
+</script>
+{% endblock %}
