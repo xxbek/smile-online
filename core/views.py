@@ -7,9 +7,9 @@ from core.models import Questionnaire, Answer, Keyword
 
 from core.utils import render_to_pdf
 from django.http import HttpResponse
-from django.views.generic import View
 
 from smile_online import settings
+from webhook.utils import get_all_questionnaire_by_patient
 
 
 @require_http_methods(['GET', 'POST'])
@@ -111,7 +111,7 @@ def pdf_user_questionnaire(request, patient_pk):
             'word_key': [keyword[0].name for keyword in patient.get_keywords_with_answers()],
             'STATIC_ROOT': settings.STATIC_ROOT
         }
-        pdf = render_to_pdf('pdf/questionnaire.html', data, 'myPDF')
+        pdf = render_to_pdf('pdf/questionnaire.html', data)
         return HttpResponse(pdf, content_type='application/pdf')
 
     return HttpResponse("Not found")
@@ -120,7 +120,7 @@ def pdf_user_questionnaire(request, patient_pk):
 @require_http_methods('POST')
 def pdf_user_keywords(request, patient_pk):
     patient: Questionnaire = get_object_or_404(Questionnaire, id=patient_pk)
-    all_questionnaire = Questionnaire.objects.filter(fio=patient.fio)
+    all_questionnaire = get_all_questionnaire_by_patient(patient)
     for questionnaire in all_questionnaire:
         questionnaire.keyword = [keyword[0].name for keyword in questionnaire.get_keywords_with_answers()]
     if patient:
@@ -129,7 +129,7 @@ def pdf_user_keywords(request, patient_pk):
             'all_questionnaire': all_questionnaire,
             'STATIC_ROOT': settings.STATIC_ROOT
         }
-        pdf = render_to_pdf('pdf/patient_keywords.html', data, 'myPDF')
+        pdf = render_to_pdf('pdf/patient_keywords.html', data)
         return HttpResponse(pdf, content_type='application/pdf')
 
     return HttpResponse("Not found")

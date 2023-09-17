@@ -27,7 +27,7 @@ def fetch_resources(uri, rel):
     return path.replace("\\", "/")
 
 
-def render_to_pdf(template_src, context_dict, filename, ):
+def render_to_pdf(template_src, context_dict):
     template = get_template(template_src)
     context_dict['STATIC_ROOT'] = settings.STATIC_ROOT
     context_dict['pdf'] = '1'

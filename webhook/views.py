@@ -5,37 +5,22 @@ from django.contrib import messages
 from core.models import Questionnaire
 from django.views.decorators.http import require_http_methods
 
-from core.utils import render_to_pdf
-from smile_online import settings
-from webhook.apps import WebhookConfig
-from webhook.utils import send_file_to, generate_body
+from webhook.hooks import send_questionnaire, send_keywords
 
 
 @login_required
 @require_http_methods(['POST'])
 def send_document(request, *args, **kwargs):
     patient_pk = kwargs.get('patient_pk')
-    patient = get_object_or_404(Questionnaire, id=patient_pk)
+    patient: Questionnaire = get_object_or_404(Questionnaire, id=patient_pk)
     quest = patient.quest
 
     action = request.POST.get('action')
-    if action == 'send_document' and patient and quest:
-        data = {
-            'patient': patient,
-            'quest': quest,
-            'title': quest.name,
-            'STATIC_ROOT': settings.STATIC_ROOT
-        }
-        file = render_to_pdf('pdf/questionnaire.html', data, 'myPDF')
-        body = generate_body(patient, quest)
-
-        if send_file_to(file=file, url=WebhookConfig.webhook_url, body=body):
-            patient.update_send_file_date()
-            messages.success(request, 'Документ успешно отправлен')
-            return redirect(request.META.get('HTTP_REFERER'))
-
-        messages.success(request, 'Ошибка в сервисе Битрикс')
-        return redirect(request.META.get('HTTP_REFERER'))
+    if patient and quest:
+        if action == 'send_questionnaire':
+            return send_questionnaire(request, patient, quest)
+        elif action == 'send_keywords':
+            return send_keywords(request, patient)
 
     messages.success(request, f'Документ не найден')
     return redirect(request.META.get('HTTP_REFERER'))

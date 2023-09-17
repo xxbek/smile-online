@@ -14,22 +14,42 @@
 
 {% block content %}
 <div class="col-12 col-lg-10 offset-lg-1">
-    <h1>{{ title }}</h1>
-    <form action="{% url 'core:generate_questionnaire' patient_pk=patient.pk %}" method="post" target="_blank">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-primary mx-2">Открыть PDF</button>
-    </form>
-    <br>
+    {% if messages %}
+            <ul class="messages" style="text-align: center; list-style-position: inside;">
+                {% for message in messages %}
+                <li style="text-align: center;"> {{ message }} </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
     <form action="{% url 'core:generate_keywords' patient_pk=patient.pk %}" method="post" target="_blank">
         {% csrf_token %}
-        <button type="submit" class="btn btn-primary mx-2">Открыть ключевые слова пациента</button>
+        <button type="submit" class="btn btn-primary mx-2">Открыть все ключевые слова пациента</button>
     </form>
     <br>
-    <form enctype="multipart/form-data" action="{% url 'webhook:send_document' patient_pk=patient.pk %}" method="post" >
+    <form enctype="multipart/form-data" action="{% url 'webhook:send_document' patient_pk=patient.pk %}" method="post">
         {% csrf_token %}
-        <input type="hidden" name="action" value="send_document">
-        <button type="submit" class="btn btn-primary mx-2">Отправить PDF в Битрикс</button>
+        <input type="hidden" name="action" value="send_keywords">
+        <button type="submit" class="btn btn-primary mx-2">Отправить все ключевые слова пациента в Битрикс</button>
+    </form>
+    <div class="content px-3 my-4">
+        {% if patient.last_send_keywords_date %}
+            Дата последней отправки ключевых слов: {{ patient.last_send_keywords_date }}
+        {% endif %}
+    </div>
+    <hr>
+    <h1>{{ title }}</h1>
+    <br>
+    <form action="{% url 'core:generate_questionnaire' patient_pk=patient.pk %}" method="post" target="_blank">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary mx-2">Открыть анкету пациента</button>
+    </form>
+    <br>
 
+    <form enctype="multipart/form-data" action="{% url 'webhook:send_document' patient_pk=patient.pk %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="send_questionnaire">
+        <button type="submit" class="btn btn-primary mx-2">Отправить анкету в Битрикс</button>
     </form>
     <div class="content px-3 my-4">
         {% if patient.last_send_file_date %}
@@ -38,13 +58,6 @@
     </div>
 
     <div class="content px-3 my-4">
-        {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
         <p><big>ФИО: {{ patient.fio }}</big></p>
         <p class="text-muted mb-4">Дата прохождения: {{ patient.added_at }}</p>
         <h4 class="mb-3">Ключевые слова анкеты:</h4>

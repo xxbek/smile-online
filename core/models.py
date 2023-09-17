@@ -115,6 +115,13 @@ class Questionnaire(models.Model):
         help_text='Дата последней отправки данных анкеты в Битрикс',
     )
 
+    last_send_keywords_date = models.DateTimeField(
+        verbose_name='Дата последней отправки ключевых слов',
+        null=True,
+        blank=True,
+        help_text='Дата последней отправки ключевых слов пациента в Битрикс',
+    )
+
     def __str__(self):
         return '{} {}'.format(self.added_at.strftime('%Y-%m-%d'), self.fio)
 
@@ -165,6 +172,11 @@ class Questionnaire(models.Model):
     def update_send_file_date(self):
         self.last_send_file_date = timezone.now().replace(microsecond=0)
         self.save()
+
+    def update_send_keywords_date(self):
+        for patient in Questionnaire.objects.filter(fio=self.fio, dob=self.dob):
+            patient.last_send_keywords_date = timezone.now().replace(microsecond=0)
+            patient.save()
 
 
 class Answer(models.Model):

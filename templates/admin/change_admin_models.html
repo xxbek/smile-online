@@ -3,20 +3,26 @@
 {% block object-tools %}
     {{ block.super }}
 <hr/>
-    <form action="{% url 'core:generate_questionnaire' patient_pk=original.id %}" method="post" target="_blank">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-primary mx-2">Открыть PDF</button>
-    </form>
-<hr/>
     <form action="{% url 'core:generate_keywords' patient_pk=original.id %}" method="post" target="_blank">
         {% csrf_token %}
         <button type="submit" class="btn btn-primary mx-2">Открыть ключевые слова пациента</button>
     </form>
 <hr/>
-    <form enctype="multipart/form-data" action="{% url 'webhook:send_document' patient_pk=original.id %}" method="post" target="_blank">
+    <form action="{% url 'core:generate_questionnaire' patient_pk=original.id %}" method="post" target="_blank">
         {% csrf_token %}
-        <input type="hidden" name="action" value="send_document">
-        <button type="submit" class="btn btn-primary mx-2">Отправить PDF в Битрикс</button>
+        <button type="submit" class="btn btn-primary mx-2">Открыть анкету пациента</button>
+    </form>
+<hr/>
+    <form enctype="multipart/form-data" action="{% url 'webhook:send_document' patient_pk=original.id %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="send_keywords">
+        <button type="submit" class="btn btn-primary mx-2">Отправить ключевые слова для всех анкет в Битрикс</button>
+    </form>
+<hr/>
+    <form enctype="multipart/form-data" action="{% url 'webhook:send_document' patient_pk=original.id %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="send_questionnaire">
+        <button type="submit" class="btn btn-primary mx-2">Отправить анкету в Битрикс</button>
     </form>
 <hr/>
 {% endblock %}
