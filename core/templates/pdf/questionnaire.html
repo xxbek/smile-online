@@ -13,18 +13,26 @@
         font-family: Alice-Regular;
         font-size: 14px;
         }
-        h1 {text-align:center; font-size: 30px;}
+
+        h1 {
+        text-align:center; font-size: 30px;
+        }
 
         table, th, td {
-        border-collapse: collapse;
+          border-collapse: collapse;
 
-  border: 1px solid black;
-  padding: 3px;
+          border: 1px solid black;
+          padding: 3px;
 }
 
-.visible-space {
-    white-space: pre; /* Запрещаем схлопывание пробелов */
-  }
+        .visible-space {
+            white-space: pre;
+          }
+
+        .highlighted{
+              background-color: #c6c6c6;
+              font-weight: bold;
+          }
 </style>
 {% endblock %}
 
@@ -52,9 +60,15 @@
                 <tbody>
                 {% for answer in patient.answers.all %}
                 <tr>
-                    <td style="width: 10%;">{{ forloop.counter }}</td>
-                    <td style="width: 80%;">{{ answer.question.title }}</td>
-                    <td style="width: 10%;">{{ answer.answer }}</td>
+                    <td style="width: 10%;">
+                        {{ forloop.counter }}
+                    </td>
+                    <td style="width: 80%;">
+                        {{ answer.question.title }}
+                    </td>
+                    <td class="{% if answer.answer == 'Да' %}highlighted{% endif %}" style="width: 10%;">
+                        {{ answer.answer }}
+                    </td>
                 </tr>
                 {% endfor %}
                 </tbody>
