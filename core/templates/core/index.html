@@ -20,7 +20,7 @@
         {% if your_questionnaires %}
         <ul>
             {% for qst in your_questionnaires %}
-            <li><a href="{% url 'core:questionnaire' slug=qst.slug %}">{{ qst.fio }} <small class="text-muted">{{ qst.added_at }} (<b>{{ qst.get_cur_question_number }} / {{ qst.get_total_questions_count }}</b>)</small></a></li>
+            <li><a href="{% url 'core:questionnaire' slug=qst.slug %}">{{ qst.quest.name }} <small class="text-muted">{{ qst.added_at }} (<b>{{ qst.get_cur_question_number }} / {{ qst.get_total_questions_count }}</b>)</small></a></li>
             {% endfor %}
         </ul>
         {% else %}

@@ -17,5 +17,4 @@ def send_file_to(filename: str, file: InMemoryUploadedFile, url: str, body: dict
 
 
 def get_all_questionnaire_by_patient(patient):
-    print(patient.fio, patient.dob)
     return Questionnaire.objects.filter(fio=patient.fio, dob=patient.dob)

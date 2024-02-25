@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.decorators.http import require_http_methods
 
 from core.forms import QuestionnaireForm
-from core.models import Questionnaire, Answer, Keyword
+from core.models import Questionnaire, Answer, Keyword, Quest
 
 from core.utils import render_to_pdf
 from django.http import HttpResponse
@@ -90,10 +90,20 @@ def questionnaire_page(request, slug, template_name='core/questionnaire.html'):
             questionnaire.update_keywords()
         return redirect('core:questionnaire', slug=questionnaire.slug)
 
+    questionnaire_need_to_fill = []
+    # when questionnaire is filled
+    if next_question is None:
+        your_questionnaires = Questionnaire.objects.filter(slug__in=request.session.get('questionnaires', []))
+        all_user_questionnaires_types = set([quest_id.quest.id for quest_id in your_questionnaires])
+        for quest_type in Quest.objects.all():
+            if quest_type.id not in all_user_questionnaires_types:
+                questionnaire_need_to_fill.append(quest_type)
+
     context = {
         'title': 'Прохождение теста',
         'questionnaire': questionnaire,
         'next_question': next_question,
+        'questionnaire_need_to_fill': questionnaire_need_to_fill
     }
     return render(request, template_name, context=context)
 

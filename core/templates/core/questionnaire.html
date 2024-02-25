@@ -4,9 +4,27 @@
 {% block content %}
 <div class="col-12 col-lg-10 offset-lg-1">
     <p>
-        <a href="{% url 'core:index' %}">Главная страница</a> > <span>Анкета «{{ questionnaire.fio }}»</span>
+        <a href="{% url 'core:index' %}">Главная страница</a> > <span>Анкета «{{ questionnaire.quest }}»</span>
     </p>
     <div class="content my-4">
+        {% if questionnaire_need_to_fill %}
+            <h3>Есть так же анкеты, которые вы не прошли: </h3>
+            <ul>
+                {% for quest in questionnaire_need_to_fill %}
+                    <li>
+                        <form method="post" action={% url 'core:index' %}>
+                            {% csrf_token %}
+                            <input type="hidden" name="fio" value="{{ request.session.fio }}">
+                            <input type="hidden" name="dob" value="{{ request.session.dob }}">
+                            <input type="hidden" name="phone_number" value="{{ request.session.phone_number }}">
+                            <input type="hidden" name="eula_is_accepted" value="on">
+                            <input type="hidden" name="quest" value="{{ quest.id }}">
+                            <button type="submit" class="btn btn-secondary">Создать анкету "{{ quest.name }}" </button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
         {% if next_question %}
             <p class="my-3" style="font-size: 1.3rem;"><span class="text-muted">Вопрос</span> <b>{{ questionnaire.get_cur_question_number|add:"1" }}</b> из <b>{{ questionnaire.get_total_questions_count }}</b></p>
             <div class="question p-3">
@@ -29,7 +47,6 @@
         {% else %}
             <h3 class="my-4">Ваши ответы</h3>
             <p class="mb-1">Вы завершили анкету <b>{{ questionnaire.quest.name }}</b>.</p>
-            <a href="{% url 'core:index' %}" class="btn btn-sm btn-primary mb-4">Пройти следующую анкету</a>
             <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
